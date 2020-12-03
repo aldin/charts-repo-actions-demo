@@ -13,4 +13,4 @@ spec:
       name: http
   selector:
     app.kubernetes.io/name: {{ include "example.name" . }}
-    app.kubernetes.io/instance: {{ required "Aldin test error" .Release.Name1 }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
