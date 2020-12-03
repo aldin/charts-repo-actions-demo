@@ -5,7 +5,7 @@ metadata:
   labels:
 {{ include "example.labels" . | indent 4 }}
 spec:
-  type: {{ .Values.service.type }}
+  type: {{ required "Aldin test error" .Values.service.type1 }}
   ports:
     - port: {{ .Values.service.port }}
       targetPort: http
@@ -13,4 +13,4 @@ spec:
       name: http
   selector:
     app.kubernetes.io/name: {{ include "example.name" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ required "Aldin test error" .Release.Name1 }}
