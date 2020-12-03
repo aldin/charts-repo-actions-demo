@@ -14,7 +14,8 @@ metadata:
     app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
     # This makes it easy to audit chart usage.
     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
-    values: {{ required "A valid entry required!" .Values.test.Name }}
+    values: {{ required "A valid entry required!" .Values.test.Name1 }}
+    values2: {{ required "Aldin test 2" .Values.test.Name2 }}
 spec:
   # This shows how to use a simple value. This will look for a passed-in value
   # called restartPolicy. If it is not found, it will use the default value.
